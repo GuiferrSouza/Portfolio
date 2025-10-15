@@ -1,0 +1,46 @@
+header {
+  padding: 20px;
+}
+
+header div,
+header nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 30px;
+}
+
+header div {
+  justify-content: space-between;
+}
+
+header nav a {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+}
+
+header nav a::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.3s ease;
+  pointer-events: none;
+  filter: blur(8px);
+}
+
+header nav a:hover::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+header h1 {
+  margin: 0;
+}

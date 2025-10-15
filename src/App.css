@@ -1,12 +1,16 @@
 .app {
   margin: 0 auto;
-  padding: 20px;
+  padding: 30px clamp(40px, 15vw, 300px);
+  font-size: clamp(0.9rem, 0.6vw + 0.5rem, 1.08rem);
+  color: #b5b5b5
 }
 
 .fade {
   opacity: 0;
   transform: translateY(50px);
-  transition: all 1s ease-out;
+  transition: opacity 1s ease-out,
+    transform 1s ease-out,
+    Color .2s ease-out;
 }
 
 .fade.show {
@@ -14,91 +18,21 @@
   transform: translateY(0);
 }
 
-header {
-  margin-bottom: 40px;
-  padding: 20px;
-}
-
-header div,
-header nav {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  column-gap: 30px;
-}
-
-header div {
-  justify-content: space-between;
-}
-
-header nav a {
-  position: relative;
-  color: #b5b5b5;
-  text-decoration: none;
-  font-weight: 500;
-  padding: 5px 0;
-  transition: color 0.3s ease;
-}
-
-header nav a::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 150%;
-  height: 100%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
-  transform: translate(-50%, -50%) scale(0);
-  transition: transform 0.3s ease;
-  pointer-events: none;
-  filter: blur(8px);
-}
-
-header nav a:hover::after {
-  transform: translate(-50%, -50%) scale(1);
-}
-
-header nav span,
-header nav a:hover {
-  color: #fff;
-}
-
-header h1 {
-  color: #b5b5b5;
-  margin: 0;
-}
-
-header p {
-  color: rgb(143, 143, 218);
-}
-
 section {
   margin-bottom: 60px;
 }
 
+summary {
+  cursor: pointer;
+}
+
+ul li::marker,
 h2 {
-  color: #0077ff;
-  border-bottom: 2px solid #0077ff;
-  display: inline-block;
-  margin-bottom: 10px;
+  color: #D69F85;
 }
 
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-}
-
-.project-card {
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  padding: 15px;
-}
-
-.project-card img {
-  width: 100%;
-  border-radius: 10px;
+h2 {
+  margin-bottom: 0.5rem;
 }
 
 .skills ul {

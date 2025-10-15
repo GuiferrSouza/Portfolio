@@ -1,7 +1,7 @@
 import { useEffect } from "react";
-import Header from "./components/Header";
-import About from "./components/About";
-import Projects from "./components/Projects";
+import Header from "./components/HeaderSession/HeaderSession";
+import About from "./components/AboutSession/AboutSession";
+import Projects from "./components/ProjectsSession/ProjectsSession";
 import Skills from "./components/Skills";
 import Contact from "./components/Contact";
 import './App.css';
