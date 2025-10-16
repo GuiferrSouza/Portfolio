@@ -32,14 +32,12 @@ const ProjectModal = ({ visible, project, handleClose }) => {
 
                 <div className="modal-body">
                     <div className="modal-gallery">
-                        <button className="prev" onClick={(e) => { e.preventDefault(); prevSlide(); }}>‹</button>
-
                         {project.gallery.map((img, i) => (
                             <div key={i} className={`slide ${i === current ? "active" : ""}`} >
                                 {i === current && <img src={img} alt={`${project.title} ${i}`} />}
                             </div>
                         ))}
-
+                        <button className="prev" onClick={(e) => { e.preventDefault(); prevSlide(); }}>‹</button>
                         <button className="next" onClick={(e) => { e.preventDefault(); nextSlide(); }}>›</button>
                     </div>
 

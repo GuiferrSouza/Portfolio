@@ -6,14 +6,30 @@ import './App.css';
 
 export default function App() {
   const [activeSection, setActiveSection] = useState(0);
+  const visitedSectionsRef = useRef(new Set());
   const sectionsRef = useRef([]);
 
-  useEffect(() => {
-    const elements = document.querySelectorAll(".fade");
+  const animateSection = (sectionIndex) => {
+    const section = sectionsRef.current[sectionIndex];
+    if (!section) return;
+
+    const elements = section.querySelectorAll(".fade");
     elements.forEach((el, index) => {
-      setTimeout(() => { el.classList.add("show") }, index * 150);
+      setTimeout(() => { el.classList.add("show") }, (index + 1) * 150);
     });
+  };
+
+  useEffect(() => {
+    animateSection(0);
+    visitedSectionsRef.current.add(0);
   }, []);
+
+  useEffect(() => {
+    if (!visitedSectionsRef.current.has(activeSection)) {
+      animateSection(activeSection);
+      visitedSectionsRef.current.add(activeSection);
+    }
+  }, [activeSection]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(

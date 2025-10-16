@@ -1,8 +1,9 @@
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 10px;
-    justify-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    width: -webkit-fill-available;
+    gap: 20px;
+    margin: 0 auto;
 }
 
 .project-item {
@@ -11,6 +12,7 @@
     box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.2);
     transition: transform 0.3s ease;
     cursor: pointer;
+    width: 100%;
 }
 
 .project-item:hover img {
@@ -42,13 +44,34 @@
     color: #fff;
 }
 
+.status-badge::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    
+    top: 50%;
+    right: -8px;
+    transform: translateY(-50%);
+}
+
 .status-badge.complete {
     background: #28a745;
+}
+
+.status-badge.complete::after {
+    border-left: 10px solid #28a745;
 }
 
 .status-badge.in-progress {
     background: #ffc107;
     color: #333;
+}
+
+.status-badge.in-progress::after {
+    border-left: 10px solid #ffc107;
 }
 
 .project-title {
