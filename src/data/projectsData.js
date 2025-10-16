@@ -1,27 +1,29 @@
-import pj1 from "../../resources/me.jpeg";
+import defaultImg from "../resources/default.jpeg";
+import profileImg from "../resources/profile.jpeg";
 
-export const projectsData = [
+const projectsData = [
     {
         id: 1,
         title: "Gerador de Orçamentos",
         status: "Completo",
-        image: pj1,
+        image: defaultImg,
         details: "Gerenciador de painéis baseado em catálogo de peças com exportação para Word.",
         techs: ["VBA", "Interop.Word", "Interop.Excel", "RibbonX Editor"],
         company: "EPLAN Brasil",
         obs: "Código protegido por questões de confidencialidade.",
-        gallery: [pj1, pj1]
+        gallery: [defaultImg, profileImg]
     },
     {
         id: 2,
         title: "Painel de Controle Web",
         status: "Em andamento",
-        image: pj1,
-        details:
-            "Dashboard interativo para visualização de dados de produção, com gráficos em tempo real.",
+        image: defaultImg,
+        details: "Dashboard interativo para visualização de dados de produção, com gráficos em tempo real.",
         techs: ["React", "Node.js", "PostgreSQL"],
         company: "EPLAN Brasil",
         obs: "Projeto interno.",
-        gallery: [pj1]
+        gallery: [defaultImg]
     }
 ];
+
+export default projectsData;

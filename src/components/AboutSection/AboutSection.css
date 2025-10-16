@@ -1,0 +1,23 @@
+.about-content {
+    display: flex;
+    gap: 30px;
+}
+
+.profile-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    flex: 1;
+}
+
+@media (max-width: 750px) {
+    .about-content {
+        gap: 0;
+    }
+
+    .profile-image {
+        display: none;
+    }
+}

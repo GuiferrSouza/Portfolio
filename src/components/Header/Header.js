@@ -1,6 +1,6 @@
-import "./HeaderSession.css";
+import "./Header.css";
 
-const HeaderSession = () => {
+const Header = () => {
     return (
         <header className="header">
             <h1 className="fade">Guilherme Ferreira de Souza</h1>
@@ -17,4 +17,4 @@ const HeaderSession = () => {
     );
 };
 
-export default HeaderSession;
+export default Header;

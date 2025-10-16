@@ -1,16 +1,16 @@
-import { useState } from "react";
-import { projectsData } from "./projectsSessionData";
+import { useState, forwardRef } from "react";
+import data from "../../data/projectsData";
 import ProjectModal from "../ProjectModal/ProjectModal";
-import "./ProjectsSession.css";
+import "./ProjectsSection.css";
 
-const Projects = () => {
+const ProjectsSection = forwardRef((_, ref) => {
   const [selectedProject, setSelectedProject] = useState(null);
 
   return (
-    <section id="projects" className="projects">
+    <section id="projects" className="projects" ref={ref}>
       <h2 className="fade">Projetos</h2>
       <div className="projects-grid">
-        {projectsData.map((proj) => (
+        {data.map((proj) => (
           <div key={proj.id} className="project-item fade" onClick={() => setSelectedProject(proj)}>
             <div className="image-wrapper">
               <img src={proj.image} alt={proj.title} />
@@ -28,6 +28,6 @@ const Projects = () => {
       )}
     </section>
   );
-};
+});
 
-export default Projects;
+export default ProjectsSection;
