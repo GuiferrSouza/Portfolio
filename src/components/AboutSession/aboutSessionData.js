@@ -24,7 +24,7 @@ export const aboutData = {
                         FEI (Centro Universitário da Fundação Educacional Inaciana Padre Sabóia de
                         Medeiros)
                     </strong>
-                    , atualmente no quinto semestre, buscando aprofundar meus conhecimentos em
+                    , atualmente no sexto semestre, buscando aprofundar meus conhecimentos em
                     algoritmos, estruturas de dados e desenvolvimento de sistemas.
                 </>
             )
