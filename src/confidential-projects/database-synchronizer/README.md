@@ -1,89 +1,140 @@
 # Sincronizador de Bancos de Dados EPLAN x ERP
 
-O **Sincronizador de Bancos de Dados EPLAN x ERP** é uma solução desenvolvida para integrar e manter a consistência de informações entre o banco de dados de peças do **[EPLAN Electric P8](https://www.eplan.software/pt/solucoes/eplan-electric-p8/)** e o **ERP corporativo**. O sistema utiliza a **API oficial do EPLAN** para realizar a **sincronização bidirecional de dados**, garantindo que qualquer alteração efetuada em um dos sistemas seja automaticamente refletida no outro, de forma segura, auditável e totalmente configurável.
+> **Integração inteligente entre engenharia e gestão corporativa.**  
+> Sincronização automática, segura e bidirecional entre o **EPLAN Electric P8** e o **ERP corporativo**.
 
-O principal objetivo da ferramenta é **eliminar redundâncias**, **assegurar a integridade das informações** e **reduzir o esforço manual** na atualização de dados técnicos e comerciais de componentes industriais.
+---
 
-O **EPLAN Electric P8** é uma plataforma amplamente utilizada na **engenharia elétrica e de automação**, permitindo o desenvolvimento de diagramas esquemáticos, gerenciamento de componentes e geração automática de documentação técnica. Já o **ERP (Enterprise Resource Planning)** é o sistema responsável pela **gestão administrativa, financeira e de estoque** de uma organização.  
+O **Sincronizador de Bancos de Dados EPLAN x ERP** é uma solução desenvolvida para integrar e manter a consistência de informações entre o banco de dados de peças do **[EPLAN Electric P8](https://www.eplan.software/pt/solucoes/eplan-electric-p8/)** e o **ERP corporativo**.  
 
-A integração entre o EPLAN e o ERP é fundamental para alinhar as informações de engenharia e gestão empresarial, garantindo que os dados técnicos dos projetos estejam sincronizados com os registros comerciais e operacionais da empresa. Dessa forma, evita-se a ocorrência de divergências entre o que é projetado, adquirido e produzido, promovendo maior eficiência e confiabilidade nos processos internos.
+A ferramenta utiliza a **API oficial do EPLAN** para realizar a **sincronização bidirecional de dados**, garantindo que qualquer alteração efetuada em um dos sistemas seja automaticamente refletida no outro — de forma **segura**, **auditável** e **totalmente configurável**.
+
+---
+
+## Objetivos Principais
+
+- 🔄 **Eliminar redundâncias** e divergências entre sistemas  
+- 🧩 **Assegurar a integridade das informações**  
+- ⚙️ **Reduzir o esforço manual** de atualização de dados técnicos e comerciais  
+- 🧠 **Promover alinhamento** entre áreas de engenharia e gestão  
+
+---
+
+## Contexto Tecnológico
+
+O **EPLAN Electric P8** é uma plataforma amplamente utilizada na **engenharia elétrica e de automação**, permitindo o desenvolvimento de diagramas esquemáticos, gerenciamento de componentes e geração automática de documentação técnica.  
+
+O **ERP (Enterprise Resource Planning)**, por sua vez, é o sistema central responsável pela **gestão administrativa, financeira e de estoque** da organização.  
+
+> Integrar esses dois ambientes é essencial para **alinhar o que é projetado, adquirido e produzido**, garantindo consistência entre o **mundo técnico** e o **mundo operacional** da empresa.
+
+---
 
 ## Arquitetura e Integração
 
-A aplicação atua como um **módulo complementar do EPLAN Electric P8**, adicionando uma interface visual dentro do próprio ambiente do software. Por meio dessa interface, é possível configurar conexões, mapear propriedades e executar sincronizações de dados entre o EPLAN e o ERP.
+A aplicação atua como um **módulo complementar do EPLAN Electric P8**, adicionando uma **interface visual interativa** diretamente no ambiente do software.
 
-A comunicação com o ERP pode ocorrer de duas formas:  
-- **Conexão direta ao banco de dados SQL**, mediante credenciais e permissões adequadas;  
-- **Integração via API**, utilizando endpoints disponibilizados pelo ERP, quando essa funcionalidade estiver disponível.
+**Formas de integração com o ERP:**
 
-A arquitetura foi projetada com foco em **extensibilidade**, permitindo a adaptação a diferentes sistemas ERP sem alterações significativas no núcleo da aplicação.
+| Método | Descrição | Requisitos |
+|--------|------------|------------|
+| **Conexão direta (SQL)** | Acesso ao banco de dados do ERP por meio de credenciais seguras. | Permissões de leitura e escrita. |
+| **Integração via API** | Comunicação através de endpoints REST, quando disponíveis. | API pública ou privada do ERP. |
+
+A arquitetura foi projetada com foco em **extensibilidade**, permitindo adaptar o sincronizador a diferentes sistemas ERP **sem modificações estruturais** no núcleo da aplicação.
+
+![Interface do EPLAN](https://github.com/GuiferrSouza/Portfolio/blob/main/src/confidential-projects/database-synchronizer/images/1.jpeg)
+
+---
 
 ## Funcionalidades
 
-### Configuração de Conexão
-Permite configurar os parâmetros de acesso ao ERP, seja via conexão direta com o banco de dados SQL, seja por meio de uma API.  
-Essas credenciais podem ser salvas localmente para reutilização futura, facilitando o processo de configuração em ambientes corporativos.
+### ⚙️ Configuração de Conexão
+Permite configurar os parâmetros de acesso ao ERP, seja por **SQL** ou **API**.  
+As credenciais podem ser salvas localmente, garantindo **agilidade na reconfiguração** em ambientes corporativos.
 
-### Mapeamento de Dados
-O sistema oferece um mecanismo avançado de **mapeamento de propriedades**, que define quais campos do EPLAN correspondem aos campos equivalentes do ERP.  
-São disponibilizadas mais de **7.000 propriedades** do EPLAN, que podem ser selecionadas em um **ComboBox** de forma prática e intuitiva.
+---
 
-Após selecionar uma propriedade do EPLAN, o usuário indica o **nome equivalente no ERP**, criando assim uma relação direta entre os dois sistemas.
+### 🧭 Mapeamento de Dados
+Sistema avançado de **mapeamento de propriedades**, que define a correspondência entre campos do **EPLAN** e do **ERP**.
 
-As propriedades suportam múltiplos tipos de dados:
+> Mais de **7.000 propriedades** do EPLAN podem ser selecionadas via **ComboBox** intuitivo.
+
+**Tipos de dados suportados:**
 - Booleanos  
 - Inteiros  
 - Números decimais  
-- Textos  
+- Textos simples e multilíngues  
 - Datas  
-- Textos multilíngues  
 
-Para os campos multilíngues, o usuário pode especificar o idioma a ser utilizado ou optar pelo modo padrão, no qual o valor é retornado sem idioma definido.
+Nos campos multilíngues, é possível especificar o idioma desejado ou utilizar o modo padrão, que retorna o valor sem idioma definido.
 
-### Sincronização de Dados
-A sincronização é realizada de forma **bidirecional**, permitindo que os dados sejam atualizados tanto do EPLAN para o ERP quanto do ERP para o EPLAN.  
-Antes da execução, o sistema apresenta uma **pré-visualização detalhada** das diferenças encontradas entre os bancos, classificando os registros de acordo com seu estado:
+![Mapeamento de Propriedades](https://github.com/GuiferrSouza/Portfolio/blob/main/src/confidential-projects/database-synchronizer/images/2.jpeg)
 
-- **Peças exclusivas:** registradas apenas em um dos sistemas; ao sincronizar, são automaticamente inseridas no outro.  
-- **Peças conflitantes:** compartilham o mesmo número ERP, mas possuem divergências em propriedades mapeadas. O sistema atualiza o destino conforme as regras configuradas.  
-- **Peças sincronizadas:** apresentam valores idênticos em ambos os sistemas e não requerem ação adicional.
+---
 
-O processo de sincronização foi desenvolvido com foco em **segurança e rastreabilidade**, mantendo registros completos das operações executadas.
+### 🔁 Sincronização de Dados
+A sincronização é **bidirecional**, permitindo atualização de dados em ambos os sentidos (EPLAN ↔ ERP).  
+
+Antes da execução, o sistema apresenta uma **pré-visualização detalhada** das diferenças, classificando-as em:
+
+| Categoria | Descrição | Ação |
+|------------|------------|------|
+| **Peças exclusivas** | Existentes apenas em um dos sistemas. | Inserção automática no outro. |
+| **Peças conflitantes** | Mesmo número ERP, mas propriedades diferentes. | Atualização conforme regras definidas. |
+| **Peças sincronizadas** | Dados idênticos entre os sistemas. | Nenhuma ação necessária. |
+
+Todas as operações são executadas com **segurança e rastreabilidade**, registrando logs completos de cada processo.
+
+![Interface de Sincronização](https://github.com/GuiferrSouza/Portfolio/blob/main/src/confidential-projects/database-synchronizer/images/3.jpeg)
+
+---
 
 ## Requisitos Técnicos
 
-### Licenciamento
-- O EPLAN deve possuir o **módulo Runtime** habilitado, necessário para utilização da API.  
-- A licença deve incluir o número **EADN 0358**, garantindo que a aplicação seja reconhecida e autorizada pelo sistema EPLAN.
+### 📄 Licenciamento
+- O EPLAN deve possuir o **módulo Runtime** habilitado (necessário para uso da API).  
+- A licença deve incluir o número **EADN 0358**, para reconhecimento e autorização da aplicação.
 
-### Versão do EPLAN
+### ⚙️ Versão do EPLAN
 Compatível com **EPLAN Electric P8 versão 2022 ou superior**.
 
-### Permissões
-O usuário deve possuir privilégios de leitura e escrita no ERP.  
-Na ausência de uma API, será necessário acesso direto ao **banco de dados SQL**.
+### 🔐 Permissões
+O usuário deve possuir privilégios de **leitura e escrita** no ERP.  
+Na ausência de API, é necessário acesso direto ao **banco de dados SQL**.
+
+---
 
 ## Segurança e Auditoria
 
-Todas as operações realizadas são registradas em **logs locais**, que contêm:  
+> **Todas as operações são registradas para garantir rastreabilidade total.**
+
+Os logs locais armazenam:
 - Data e hora da execução  
 - Usuário responsável  
-- Tipo de operação (inserção, atualização, resolução de conflito etc.)  
+- Tipo de operação (inserção, atualização, conflito etc.)  
 - Quantidade de registros processados  
 
-Esses registros garantem **rastreabilidade total** e podem ser exportados para auditoria ou análise de integração.
+Esses relatórios podem ser exportados para **auditorias, análises ou trilhas de conformidade**.
+
+---
 
 ## Benefícios
 
-- Sincronização automatizada entre o ambiente de engenharia e o sistema de gestão  
-- Eliminação de inconsistências e redundâncias de dados  
-- Redução de retrabalho e esforço manual  
-- Integração flexível, segura e escalável  
-- Interface intuitiva integrada ao EPLAN Electric P8  
-- Aumento da confiabilidade na gestão de componentes e dados de projeto  
+✅ Sincronização automatizada entre engenharia e gestão  
+✅ Eliminação de inconsistências e redundâncias  
+✅ Redução de retrabalho e erros humanos  
+✅ Integração flexível, segura e escalável  
+✅ Interface nativa no EPLAN Electric P8  
+✅ Maior confiabilidade na gestão de componentes  
+
+---
 
 ## Confidencialidade
 
+> **Código-fonte protegido por sigilo corporativo.**
+
 Este projeto é **privado** e o código-fonte é **protegido por questões de confidencialidade e propriedade intelectual**.  
-A reprodução, distribuição, engenharia reversa ou modificação não autorizada de qualquer parte do sistema é estritamente proibida.  
-O conteúdo aqui apresentado destina-se exclusivamente à **demonstração técnica e descritiva**, sem exposição do código ou de sua implementação interna.
+A reprodução, distribuição, engenharia reversa ou modificação não autorizada são **estritamente proibidas**.  
+
+O conteúdo aqui apresentado tem caráter **técnico e demonstrativo**, sem exposição de código ou detalhes de implementação interna.
