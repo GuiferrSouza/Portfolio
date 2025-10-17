@@ -1,6 +1,6 @@
 import "./Header.css";
 
-const Header = () => {
+export default function Header() {
     return (
         <header className="header">
             <h1 className="fade">Guilherme Ferreira de Souza</h1>
@@ -16,5 +16,3 @@ const Header = () => {
         </header>
     );
 };
-
-export default Header;

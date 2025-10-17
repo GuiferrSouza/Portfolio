@@ -5,7 +5,7 @@ import "./ProjectsSection.css";
 
 <Microlink url='https://www.youtube.com/watch?v=9P6rdqiybaw' />
 
-const ProjectsSection = forwardRef((_, ref) => {
+export default forwardRef((_, ref) => {
   return (
     <section id="projects" className="projects" ref={ref}>
       <h2 className="fade">Projetos</h2>
@@ -19,12 +19,10 @@ const ProjectsSection = forwardRef((_, ref) => {
                 <span className="project-status">{proj.status}</span>
               </p>
             </div>
-            <Microlink url="https://www.youtube.com/watch?v=9P6rdqiybaw" size="small"/>
+            <Microlink url={proj.url} size="small" media="logo" />
           </div>
         ))}
       </div>
     </section>
   );
 });
-
-export default ProjectsSection;

@@ -6,6 +6,28 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     display: flex;
     flex-wrap: wrap;
+    gap: 1em;
     justify-content: space-between;
     padding: 1em 0;
+}
+
+.project-item:first-child {
+    padding-top: 0;
+}
+
+.microlink_card__content_title {
+    padding-bottom: 0 !important;
+}
+
+.microlink_card__content {
+    flex-direction: column !important;
+    align-items: start !important;
+}
+
+.microlink_card__content_url span {
+    margin-left: .5em !important;
+}
+
+.microlink_card__media_image {
+    object-fit: contain !important;
 }

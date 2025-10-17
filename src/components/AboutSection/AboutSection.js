@@ -3,7 +3,7 @@ import data from "../../data/aboutData";
 import Header from "../Header/Header";
 import "./AboutSection.css";
 
-const AboutSection = forwardRef((_, ref) => {
+export default forwardRef((_, ref) => {
   return (
     <section id="about" className="about" ref={ref}>
       <Header />
@@ -19,5 +19,3 @@ const AboutSection = forwardRef((_, ref) => {
     </section>
   );
 });
-
-export default AboutSection;

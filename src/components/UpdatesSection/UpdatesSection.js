@@ -2,7 +2,7 @@ import { forwardRef } from 'react';
 import data from "../../data/updatesData";
 import "./UpdatesSection.css";
 
-const UpdatesSection = forwardRef((_, ref) => {
+export default forwardRef((_, ref) => {
     return (
         <section id="updates" className="updates" ref={ref}>
             <h2 className="fade">Atualizações</h2>
@@ -14,5 +14,3 @@ const UpdatesSection = forwardRef((_, ref) => {
         </section>
     );
 });
-
-export default UpdatesSection;
