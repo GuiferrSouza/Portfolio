@@ -1,16 +1,20 @@
-# React + Vite
+# Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, dynamic portfolio website built with React and Vite, featuring real-time data management through Supabase.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This is a personal portfolio website that dynamically displays information about me, my projects, updates, and contact information. All content is managed through Supabase, making it easy to update without touching the code.
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **About Me**: Personal introduction with bio and skills showcase
+- **Updates**: Timeline of recent activities and milestones
+- **Projects**: Showcase of my work with descriptions and links
+- **Contact**: Links to professional profiles and contact methods
+- **Responsive Design**: Works seamlessly across all devices
+- **Dynamic Content**: All data is fetched from Supabase in real-time
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Built with **React**, **Vite**, and **Supabase**.
