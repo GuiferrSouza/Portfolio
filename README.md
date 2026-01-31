@@ -18,3 +18,7 @@ This is a personal portfolio website that dynamically displays information about
 ## Tech Stack
 
 Built with **React**, **Vite**, and **Supabase**.
+
+## License
+
+MIT License
